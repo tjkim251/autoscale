@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-service-hpa
+spec:
+  selector:
+    app: flask-app-hpa
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5001
+  type: NodePort
